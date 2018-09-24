@@ -1,0 +1,21 @@
+<table class="table">
+  <thead>
+    <th> Nome da Música</th>
+    <th> Nome do Artista </th>
+    <th></th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let musica of musicas">
+      <td>{{musica.nome}}</td>
+      <td>{{musica.artista.nome}}</td>
+      <td>
+        <div class="form-check">
+          <input *ngIf="isMultiple; else radioButton" class="form-check-input" type="checkbox">
+        </div>
+        <ng-template #radioButton>
+            <input *ngIf="isMultiple; else radioButton" class="form-check-input" type="radio">
+        </ng-template>
+      </td>
+    </tr>
+  </tbody>
+</table>

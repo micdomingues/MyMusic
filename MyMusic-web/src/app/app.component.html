@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+        <label>Músicas</label>
+      <div class="form-group">
+        <form #f="ngForm" (ngSubmit)="buscarMusicas(f)" novalidate>
+          <input name="nome" placeholder="Digite o nome da Música ou Artista" class="form-control" ngModel required #nome="ngModel">
+          <button type="submit" class="btn btn-light">Buscar</button>
+        </form>
+      </div>
+      <app-table-music [musicas]="getMusicas()" [multiple]=true></app-table-music>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+        <label>Playlist</label>
+        <div class="form-group">
+            <form #f="ngForm" (ngSubmit)="buscarUsuarios(f)" novalidate>
+              <input name="usuario" placeholder="Digite o nome do Usuário" class="form-control" ngModel required #usuario="ngModel">
+              <button type="submit" class="btn btn-light">Buscar</button>
+            </form>
+          </div>
+      <app-table-music></app-table-music>
+    </div>
+
+  </div>
+
+</div>

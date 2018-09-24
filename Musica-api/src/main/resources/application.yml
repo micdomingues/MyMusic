@@ -1,0 +1,24 @@
+spring:
+  profile: dev
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLiteDialect
+        search:
+          default:
+            directory_provider: filesystem
+            indexBase: /data/index/default
+  datasource:
+    url: jdbc:sqlite:test.db
+    driverClassName: org.sqlite.JDBC
+server:
+  port: 8082
+
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
